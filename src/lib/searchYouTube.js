@@ -2,7 +2,6 @@ import YOUTUBE_API_KEY from '../config/youtube.js';
 
 var searchYouTube = (options, callback) => {
   // TODO
-  // console.log(options);
   $.ajax({
     url: 'https://www.googleapis.com/youtube/v3/search',
     type: 'GET',
@@ -10,6 +9,9 @@ var searchYouTube = (options, callback) => {
       q: options.query,
       maxResults: options.max,
       key: options.key,
+      videoEmbeddable: true,
+      type: 'video',
+      part: 'snippet'
     },
     success: function(data) {
       console.log('Here is the data', data );

@@ -3,6 +3,7 @@ import exampleVideoData from '../data/exampleVideoData.js';
 import VideoPlayer from './VideoPlayer.js';
 import searchYouTube from '/compiled/src/lib/searchYouTube.js';
 import Search from './Search.js';
+import YOUTUBE_API_KEY from '/src/config/youtube.js';
 
 class App extends React.Component {
   constructor() {
@@ -18,20 +19,17 @@ class App extends React.Component {
 
   onVideoClick(index) {
     // this.state.video = //get video that was clicked?
-
     this.setState({
       video: exampleVideoData[index]
     });
 
-    console.log(this.state.boolean);
   }
 
-  searchYouTube(data, (data)=>({
-    const {data} = data;
-    console.log(data);
-  )}
-  )
 
+  // searchYouTube(data, callback = (data)=>{
+  //   console.log(data);
+  //   }
+  // )
   render() {
 
     return (
