@@ -1,27 +1,8 @@
 import VideoList from './VideoList.js';
 import exampleVideoData from '../data/exampleVideoData.js';
 import VideoPlayer from './VideoPlayer.js';
-
-
-// var App = () => (
-//   <div>
-//     <nav className="navbar">
-//       <div className="col-md-6 offset-md-3">
-//         <div><h5><em>search</em> view goes here</h5></div>
-//       </div>
-//     </nav>
-//     <div className="row">
-//       <div className="col-md-7">
-//         <div><h5><em>videoPlayer</em><VideoPlayer video={exampleVideoData[0]}/>
-//         </h5></div>
-//       </div>
-//       <div className="col-md-5">
-//         <div><h5><em>videoList</em> <VideoList videos={exampleVideoData}/> </h5></div>
-//       </div>
-//     </div>
-//   </div>
-// );
-
+import searchYouTube from '/compiled/src/lib/searchYouTube.js';
+import Search from './Search.js';
 
 class App extends React.Component {
   constructor() {
@@ -37,6 +18,7 @@ class App extends React.Component {
 
   onVideoClick(index) {
     // this.state.video = //get video that was clicked?
+
     this.setState({
       video: exampleVideoData[index]
     });
@@ -44,11 +26,11 @@ class App extends React.Component {
     console.log(this.state.boolean);
   }
 
-  // chagneIndex(videos){
-  //   for(var key in exampleVideoData){
-
-  //   }
-  // };
+  searchYouTube(data, (data)=>({
+    const {data} = data;
+    console.log(data);
+  )}
+  )
 
   render() {
 
@@ -56,7 +38,7 @@ class App extends React.Component {
       <div>
         <nav className="navbar">
           <div className="col-md-6 offset-md-3">
-            <div><h5><em>search</em> view goes here</h5></div>
+            <div><h5><em></em><Search /></h5></div>
           </div>
         </nav>
         <div className="row">
