@@ -24,7 +24,7 @@ var exampleVideoData = [{
         width: 320,
         height: 180
       },
-      high: {
+      high: { 
         url: 'https://i.ytimg.com/vi/4ZAEBxGipoA/hqdefault.jpg',
         width: 480,
         height: 360
