@@ -11,16 +11,18 @@ var searchYouTube = (options, callback) => {
       key: options.key,
       videoEmbeddable: true,
       type: 'video',
-      part: 'snippet'
+      part: 'snippet',
+      dataType: 'application/json'
     },
     success: function(data) {
       console.log('Here is the data', data );
-      callback(data);
+      callback(data.items);
+
     },
     error: function(data) {
       console.error('Failed to send message', data);
     },
-    dataType: 'json'
+
   });
 };
 

@@ -11,11 +11,10 @@ class Search extends React.Component {
   constructor(props) {
     super(props),
     this.state = {
-      vlaue: ''
+      value: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleChange(event) {
     this.setState (
@@ -23,6 +22,12 @@ class Search extends React.Component {
         value: event.target.value
       }
     );
+
+
+    // var searchYouTube = searchYouTube(options, data =>{
+    //   // console.log(data);
+    // }
+    // );
   }
 
   handleSubmit(event) {
@@ -31,15 +36,12 @@ class Search extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div className="search-bar form-inline">
-          <input value={this.state.value} onChange={this.handleChange} className="form-control" type="text" />
-          <button className="btn hidden-sm-down">
-            <span className="glyphicon glyphicon-search"></span>
-          </button>
-        </div>
-      </form>
-
+      <div className="search-bar form-inline">
+        <input value={this.state.value} onChange={this.handleChange} className="form-control" type="text" />
+        <button onClick={this.handleSubmit} className="btn hidden-sm-down">
+          <span className="glyphicon glyphicon-search"></span>
+        </button>
+      </div>
     );
   }
 }
