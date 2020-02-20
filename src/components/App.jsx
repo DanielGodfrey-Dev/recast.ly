@@ -22,14 +22,9 @@ class App extends React.Component {
     this.setState({
       video: exampleVideoData[index]
     });
-
   }
 
 
-  // searchYouTube(data, callback = (data)=>{
-  //   console.log(data);
-  //   }
-  // )
   render() {
 
     return (
